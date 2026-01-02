@@ -197,6 +197,10 @@ npm start
 | `ADMIN_EMAIL` | 管理员邮箱 | 可选 | `admin@example.com` |
 | `ADMIN_PASSWORD` | 管理员密码 | 可选 | `admin123456` |
 | `PORT` | 服务端口 | 可选 | `3000` |
+| `JWT_SECRET` | JWT 签名密钥，用于用户认证 | 可选 | 自动生成随机值 |
+| `ENCRYPTION_KEY` | 数据加密密钥，用于加密 API Key 等敏感信息 | 可选 | 自动生成随机值 |
+
+> ⚠️ **安全提示**：生产环境建议手动设置 `JWT_SECRET` 和 `ENCRYPTION_KEY`，避免重启后密钥变化导致数据无法解密或登录失效。可使用 `openssl rand -hex 32` 生成随机密钥。
 
 > 💡 **提示**：建议在生产环境中修改管理员账号和密码
 
